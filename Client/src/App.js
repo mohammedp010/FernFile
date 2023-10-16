@@ -8,10 +8,10 @@ function App() {
 
   const [file, setFile] = useState('');
   const [result, setResult] = useState('');
-
 const onUploadClick = () => {
   fileInputRef.current.click();
 }
+
   useEffect(() => {
     const getImage = async () =>{
       if(file)
@@ -26,6 +26,7 @@ const onUploadClick = () => {
     }
     getImage();
   }, [file])
+
   return (
     <div className="container">
       <div className="wrapper">
@@ -37,7 +38,7 @@ const onUploadClick = () => {
         style={{display: 'none'}}
         onChange={(e) => setFile(e.target.files[0])}
          />
-         <a href={result} target="_blank">{result}</a>
+         <a href={result} target="_blank">{result}</a><br/>
       </div>
     </div>
   );
